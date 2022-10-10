@@ -13,7 +13,7 @@ def convert_csv(csv):
     x = df.drop(['Class'], axis = 1) #Set the features  
     return x, y
 
-x, y = convert_csv('creditcard.csv')
+x, y = convert_csv('~/Blockchain_Development/Python/Uni-Projects/creditcard.csv')
 x_train,x_test,y_train,y_test = train_test_split(x, y, random_state=42,test_size=.25) #set training/test data samples
 
 
@@ -34,7 +34,7 @@ def decision_tree_alg(x_train,x_test,y_train,y_test):
 
 #Random Forest Algorithm
 def random_forest_alg(x_train,x_test,y_train,y_test):
-    rfc = RandomForestClassifier(n_estimators = 100) #Set number of random decision trees
+    rfc = RandomForestClassifier(n_estimators = 25) #Set number of random decision trees
     rfc.fit(x, y)
     y_pred_rfc = rfc.predict(x_test)
     rfc_acc = accuracy_score(y_test, y_pred_rfc)

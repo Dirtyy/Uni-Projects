@@ -13,7 +13,7 @@ def convert_csv(csv):
     x = df.drop(['Class'], axis = 1) #Set the features  
     return x, y
 
-x, y = convert_csv('University-Projects/creditcard.csv')
+x, y = convert_csv('creditcard.csv')
 x_train,x_test,y_train,y_test = train_test_split(x, y, random_state=42,test_size=.25) #set training/test data samples
 
 
